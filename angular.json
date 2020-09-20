@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cropIT-Frontend"
+    }
+  },
+  "defaultProject": "cropIT-Frontend",
+  "cli": {
+    "analytics": "b04fccee-a593-48e4-ac06-ca9e0c1d96d6"
+  }
 }
