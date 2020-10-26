@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from '../farmer/home/home.component';
+import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { FarmerListComponent } from './farmer-list/farmer-list.component';
