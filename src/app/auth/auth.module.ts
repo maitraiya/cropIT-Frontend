@@ -8,7 +8,7 @@ import { RegisterStepOneComponent } from './register-step-one/register-step-one.
 import { RegisterStepTwoComponent } from './register-step-two/register-step-two.component';
 import { RegisterStepThreeComponent } from './register-step-three/register-step-three.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })

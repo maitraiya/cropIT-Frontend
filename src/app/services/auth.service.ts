@@ -18,4 +18,8 @@ export class AuthService {
   public signup(): void {
     
   }
+
+  public getMaterial() {
+    return this.http.get('http://localhost:3000/api/material')
+  }
 }

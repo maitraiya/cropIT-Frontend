@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,13 +10,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  userType = 'male';
+  materials = [];
 
   constructor(
     private fb: FormBuilder,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
     this.buildForm();
+    this.getMaterial();
   }
 
   buildForm() {
@@ -28,7 +33,17 @@ export class RegisterComponent implements OnInit {
       address: [null, Validators.required],
       city: [null, Validators.required],
       adhaar: [null, Validators.required],
+      userType: ['farmer', Validators.required],
+      material: ['select material', Validators.required]
     })
+  }
+
+  getMaterial() {
+    this.authService.getMaterial().subscribe((res: any) => {
+
+    }, (error) => {
+
+    });
   }
 
 }
