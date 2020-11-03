@@ -14,9 +14,9 @@
   grid-template-columns: 250px;
   grid-template-rows: 150px 150px 80px;
   grid-template-areas: "image" "text" "stats";
-  font-family: roboto !important;
+  font-family: "Raleway", sans-serif !important;
   border-radius: 18px;
-  background:rgb(248, 248, 169);
+  background:white;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   text-align: center;
   transition: 0.5s ease;
@@ -51,18 +51,18 @@
 }
 .card-text h5{
   color: black;
-  font-size: 18px;
+  font-size: 16px;
    margin-top:0px;
 }
 .card-text h2{
   margin-top:0px;
   color: rgb(33, 36, 1);
-  font-size: 28px;
+  font-size: 20px;
 }
 .card-text
 {
   grid-area: text;
-  margin: 25px;
+  margin: 20px;
   color: #fff;
 }
 .card-stats
@@ -73,7 +73,7 @@
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius:15px ;
-  background: rgb(76, 117, 37);
+  background: rgb(218, 168, 5);
 }
 .card-stats .stat{
   display: flex;

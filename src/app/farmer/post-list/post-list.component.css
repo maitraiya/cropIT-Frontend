@@ -11,10 +11,10 @@
 .card
 {
   display:grid;
-  grid-template-columns: 250px;
-  grid-template-rows: 150px 150px 80px;
+  grid-template-columns: 200px;
+  grid-template-rows: 150px 90px 80px;
   grid-template-areas: "image" "text" "stats";
-  font-family: roboto !important;
+  font-family: "Raleway", sans-serif !important;
   border-radius: 18px;
   background:rgb(255, 255, 254);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
@@ -47,30 +47,30 @@
 }
 .card-text .date{
   color: darkgreen;
-  font-size: 20px;
+  font-size: 16px;
 }
 .card-text .type{
     color: black;
-  font-size: 22px;
+  font-size: 20px;
 
 }
 .title{
   text-align: center;
   font-size: 35px;
-  
+
 }
 .card-text .quantity{
    color: rgb(33, 36, 1);
-  font-size: 22px;
+  font-size: 18px;
 }
 .card-text .unit{
   color: rgb(33, 36, 1);
- font-size: 18px;
+ font-size: 15px;
 }
 .card-text
 {
   grid-area: text;
-  margin: 25px;
+  margin: 20px;
   color: #fff;
 }
 
