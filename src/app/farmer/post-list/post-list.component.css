@@ -1,0 +1,80 @@
+#card-bar
+{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    color: green;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.card
+{
+  display:grid;
+  grid-template-columns: 250px;
+  grid-template-rows: 150px 150px 80px;
+  grid-template-areas: "image" "text" "stats";
+  font-family: roboto !important;
+  border-radius: 18px;
+  background:rgb(255, 255, 254);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 20px;
+}
+.card-image .card-image1 .card-image2
+{
+  grid-area: image;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+}
+.card-image
+{
+  background: url(../imgs/download.jpeg);
+  background-size: cover;
+}
+.card-image1
+{
+  background: url(../imgs/download1.jpeg);
+  background-size: cover;
+}
+.card-image2
+{
+  background: url(../imgs/download3.jpeg);
+  background-size: cover;
+}
+.card-text .date{
+  color: darkgreen;
+  font-size: 20px;
+}
+.card-text .type{
+    color: black;
+  font-size: 22px;
+
+}
+.title{
+  text-align: center;
+  font-size: 35px;
+  
+}
+.card-text .quantity{
+   color: rgb(33, 36, 1);
+  font-size: 22px;
+}
+.card-text .unit{
+  color: rgb(33, 36, 1);
+ font-size: 18px;
+}
+.card-text
+{
+  grid-area: text;
+  margin: 25px;
+  color: #fff;
+}
+
+.card:hover{
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
