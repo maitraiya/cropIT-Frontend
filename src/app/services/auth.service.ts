@@ -15,11 +15,11 @@ export class AuthService {
     return this.http.post('http://localhost:3000/api/login', body);
   }
 
-  public signup(): void {
-    
+  public signUp(body) {
+    return this.http.post('http://localhost:3000/api/signup', body);
   }
 
   public getMaterial() {
-    return this.http.get('http://localhost:3000/api/material')
+    return this.http.get('http://localhost:3000/api/material');
   }
 }
