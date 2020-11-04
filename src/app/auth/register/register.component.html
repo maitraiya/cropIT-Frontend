@@ -62,26 +62,25 @@
             <label class="form-check-label">Company</label>
         </div>
         <div class="form-group">
+            <label>{{registerForm.get('userType').value == 'farmer' ? 'Land area': 'Domain'}}</label>
+            <input formControlName="landAreaOrDomain" type="text" class="form-control" [placeholder]="registerForm.get('userType').value == 'farmer' ? 'Enter land area': 'Enter domain' ">
+        </div>
+        <div class="form-group">
             <label>Material</label>
-            <select #dropdown
-                (change)="materials.includes(dropdown.value)?null: materials.push(dropdown.value);registerForm.get('material').setValue('select material')"
-                class="form-control" formControlName="material">
+            <select (change)="onMaterialSelect()" class="form-control" formControlName="material">
                 <option selected disabled hidden>Select Material</option>
-                <option>Text1</option>
-                <option>Text2</option>
-                <option>Text3</option>
-                <option>Text4</option>
-                <option>Text5</option>
-                <option>Text6</option>
+                <option [ngValue]="material" *ngFor="let material of materials">{{material.name}}</option>
             </select>
         </div>
-        <div style="margin-left: 20px;" *ngFor="let material of materials;index as i">
+        <div style="margin-left: 20px;" *ngFor="let material of selectedMaterials;index as i">
             <div class="row">
-                {{material}}
-                <p (click)="materials.splice(i, 1)" style="margin-left: 20px;" class="text-danger"> X </p>
+                {{material.name}}
+                <p (click)="selectedMaterials.splice(i, 1)" style="margin-left: 20px;" class="text-danger"> X </p>
             </div>
         </div>
-
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button (click)="register()" type="submit" class="btn btn-primary">Register</button>
+        <div>
+            <a routerLink="../login"><small>Click here to Login</small></a>
+        </div>
     </form>
 </div>
