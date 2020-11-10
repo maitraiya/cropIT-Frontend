@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
 
   buildForm() {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['test@test10.com', Validators.required],
+      password: ['test123', Validators.required]
     })
   }
 
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe((res: any) => {
       this.toastrService.success('Login successful');
       localStorage.setItem('cropit-auth-token', res.token);
-      this.router.navigate([`/${res.userType}`])
+      this.router.navigate([`../../${res.userType}`])
     }, (error) => {
       this.toastrService.error(error.error);
     })

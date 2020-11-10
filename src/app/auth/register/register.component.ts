@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -18,7 +19,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,13 +31,13 @@ export class RegisterComponent implements OnInit {
   buildForm() {
     this.registerForm = this.fb.group({
       name: ['tester', Validators.required],
-      email: ['test223@test2.com', Validators.required],
+      email: ['test@test10.com', Validators.required],
       password: ['test123', Validators.required],
       confirmPassword: ['test123', Validators.required],
       phone: ['1234767891', Validators.required],
       address: ['testAddress', Validators.required],
       city: ['testCity', Validators.required],
-      adhaar: ['173456789113', Validators.required],
+      adhaar: ['736487634274', Validators.required],
       userType: ['farmer', Validators.required],
       material: [{ name: 'select material' }, Validators.required],
       landAreaOrDomain: ['777', Validators.required]
@@ -57,8 +59,10 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.authService.signUp(this.getBody()).subscribe((res) => {
-      console.log('res', res)
+    this.authService.signUp(this.getBody()).subscribe((res: any) => {
+      this.toastrService.success('Register Successful');
+      localStorage.setItem('cropit-auth-token', res['cropit-auth-token']);
+      this.router.navigate([`../../${res.userType}`]);
     }, (error) => {
       console.log('error', error)
       if (error.status != 200) {
