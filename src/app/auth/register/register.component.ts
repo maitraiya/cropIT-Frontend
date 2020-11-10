@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -55,30 +57,13 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    // console.log('this.registerForm.value', this.registerForm.value)
-    // const body = this.registerForm.value;
-    // const newObj = {};
-    // const newField = this.registerForm.get('userType').value == 'farmer' ? 'landArea' : 'domain';
-    // newObj[newField] = this.registerForm.get('landAreaOrDomain').value;
-    // newObj['material'] = this.selectedMaterials.map(o => o._id);
-    // // body[this.registerForm.value.userType] = newObj;
-    
-    // const finalBody = {
-    //   user: body,
-    // }
-    // finalBody[this.registerForm.value.userType] = newObj
-    // console.log('finalBody', finalBody)
-    
-    // delete body.user.material;
-    // delete body.user.landAreaOrDomain;
-    // delete body.user.userType;
-    // delete body.user.confirmPassword;
     this.authService.signUp(this.getBody()).subscribe((res) => {
       console.log('res', res)
-
     }, (error) => {
       console.log('error', error)
-
+      if (error.status != 200) {
+        this.toastrService.error(error.error)
+      }
     });
   }
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,8 @@ import { HttpClient } from "@angular/common/http";
 export class AuthService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   public login(body) {
@@ -21,5 +23,10 @@ export class AuthService {
 
   public getMaterial() {
     return this.http.get('http://localhost:3000/api/material');
+  }
+
+  public logout() {
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }
