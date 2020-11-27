@@ -1,21 +1,16 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompanyService {
 
-  options = {
-    headers: new HttpHeaders()
-      .set('cropit-auth-token', localStorage.getItem('cropit-auth-token'))
-  }
-
   constructor(
-    private http: HttpClient
+    private http: HttpService
   ) { }
 
   getCompanies() {
-    return this.http.get('http://localhost:3000/api/company/', this.options);
+    return this.http.get('/company/')
   }
 }

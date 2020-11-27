@@ -1,14 +1,14 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FarmerService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   getFarmers() {
-    return this.http.get('http://localhost:3000/api/farmer');
+    return this.http.get('/farmer');
   }
 }

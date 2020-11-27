@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe((res: any) => {
       this.toastrService.success('Login successful');
       localStorage.setItem('cropit-auth-token', res.token);
+      localStorage.setItem('userId', res.userId);
+      localStorage.setItem('userType', res.userType);
       this.router.navigate([`../../${res.userType}`])
     }, (error) => {
       this.toastrService.error(error.error);

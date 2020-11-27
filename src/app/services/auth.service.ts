@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +9,35 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(
-    private http: HttpClient,
+    private http: HttpService,
     private router: Router
   ) { }
 
-  public login(body) {
-    return this.http.post('http://localhost:3000/api/login', body);
+  login(body) {
+    return this.http.post('/login', body);
   }
 
-  public signUp(body) {
-    return this.http.post('http://localhost:3000/api/signup', body);
+  signUp(body) {
+    return this.http.post('/signup', body);
   }
 
-  public getMaterial() {
-    return this.http.get('http://localhost:3000/api/material');
+  getLoggedInUser() {
+    return this.http.get(this.getUserType() == 'farmer' ? `/farmer/${this.getUserId()}` : `/company/${this.getUserId()}`);
   }
 
-  public logout() {
+  getMaterial() {
+    return this.http.get('/material');
+  }
+
+  getUserType() {
+    return localStorage.getItem('userType');
+  }
+
+  getUserId() {
+    return localStorage.getItem('userId')
+  }
+
+  logout() {
     localStorage.clear();
     this.router.navigate(['/']);
   }
