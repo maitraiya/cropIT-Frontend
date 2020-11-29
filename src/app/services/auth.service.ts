@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   getLoggedInUser() {
-    return this.http.get(this.getUserType() == 'farmer' ? `/farmer/${this.getUserId()}` : `/company/${this.getUserId()}`);
+    return this.http.get(this.getUserType() === 'farmer' ? `/farmer/${this.getUserId()}` : `/company/${this.getUserId()}`);
   }
 
   getMaterial() {
@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   getUserId() {
-    return localStorage.getItem('userId')
+    return localStorage.getItem('userId');
   }
 
   logout() {

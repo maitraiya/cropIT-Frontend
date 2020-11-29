@@ -8,16 +8,19 @@ export class HttpService {
 
   api = 'http://localhost:3000/api';
 
+  token = localStorage.getItem('cropit-auth-token');
+
   options = {
     headers: new HttpHeaders()
-      .set('cropit-auth-token', localStorage.getItem('cropit-auth-token'))
-  }
+      .set('cropit-auth-token', this.token)
+  };
 
   constructor(
     private http: HttpClient
   ) { }
 
   public get(url) {
+    console.log('this.options', this.options)
     return this.http.get(this.api + url, this.options);
   }
 
