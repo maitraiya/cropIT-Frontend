@@ -33,7 +33,7 @@ body{
     align-items: flex-end;
     width: 40%;
     height: 100%;
-    background-image: linear-gradient(to bottom,rgba(255,255,255,0.1) ,rgba(0,0,0,0.95) 85%),url("../imgs/bg.jpg");
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.1) ,rgba(0,0,0,0.95) 85%),url("src/assets/imgs/bg.jpg");
     color: #ffa000;
     background-size: cover;
     padding: 40px;
