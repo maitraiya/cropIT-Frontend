@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +10,20 @@ export class HttpService {
   api = 'http://localhost:3000/api';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
-  private getOptions() {
-    return {
-      headers: new HttpHeaders()
-        .set('cropit-auth-token', localStorage.getItem('cropit-auth-token'))
-    };
+  getOptions() {
+    if (localStorage.getItem('cropit-auth-token')) {
+      return {
+        headers: new HttpHeaders()
+          .set('cropit-auth-token', localStorage.getItem('cropit-auth-token'))
+      };
+    } else {
+      localStorage.clear();
+      this.router.navigate(['/']);
+    }
   }
 
   public get(url) {

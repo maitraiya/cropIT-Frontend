@@ -37,7 +37,7 @@
 
 }
 .card-image img{
-  background-image: url("../imgs/farmer.png");
+  background-image: url("../../../assets/imgs/farmer.png");
   padding: 5px;
   background-size: cover;
   transform: translate(0px,100px);
