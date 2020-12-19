@@ -10,10 +10,11 @@ import { RentComponent } from './rent/rent.component';
 import { ToolsComponent } from './tools/tools.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MyRentedComponent } from './my-rented/my-rented.component';
 
 
 @NgModule({
-  declarations: [FarmerComponent, HomeComponent, ProfileComponent, PostListComponent, RentComponent, ToolsComponent, PaymentsComponent, EditProfileComponent],
+  declarations: [FarmerComponent, HomeComponent, ProfileComponent, PostListComponent, RentComponent, ToolsComponent, PaymentsComponent, EditProfileComponent, MyRentedComponent],
   imports: [
     CommonModule,
     FarmerRoutingModule
