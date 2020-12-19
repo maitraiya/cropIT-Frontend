@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private companyService: CompanyService
+  ) { }
 
   ngOnInit(): void {
+    this.companyService.getAllDeals().subscribe((res) => { 
+      console.log('res', res)
+
+    })
   }
 
 }

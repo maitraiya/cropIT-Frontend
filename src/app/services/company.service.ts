@@ -13,4 +13,8 @@ export class CompanyService {
   getCompanies() {
     return this.http.get('/company/')
   }
+
+  getAllDeals() {
+    return this.http.get('/deal');
+  }
 }
