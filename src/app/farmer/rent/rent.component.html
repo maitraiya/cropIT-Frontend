@@ -1,90 +1,28 @@
+<div *ngFor="let machine of machines" class="blog-post">
+  <div class="blog-post-img1">
+    <img [src]="machine.image" alt="tree">
+  </div>
+  <div class="blog-post-info">
+    <div class="blog-post-title">
+      <h2>Rice Cutting Machine</h2>
 
-                <div class="blog-post">
-                  <div class="blog-post-img1">
-                    <img src= "assets/image/machine1.jpg" alt="tree">
-                  </div>
-                  <div class="blog-post-info">
-                    <div class="blog-post-title">
-                      <h2>Rice Cutting Machine</h2>
+    </div>
+    <div class="blog-post-date">
+      <b> <span>Price: </span></b>
+      <span>{{machine.charges}} Rs / </span>
+      <span>1 Day</span><br>
 
-                    </div>
-                    <div class="blog-post-date">
-                      <b> <span>Price: </span></b>
-                     <span>200 Rs / </span>
-                      <span>1 Day</span><br>
+      <b> <span>Address: </span></b>
+      <span>{{machine.renter.user.address}}, {{machine.renter.user.city}}</span><br>
 
-                      <b> <span>Address: </span></b>
-                      <span>Sinchan Nagar, Pune -413502</span><br>
-
-                      <b> <span>Status: </span></b>
-                      <span>Available</span>
-
-
-                    </div>
-
-                    <div class="blog-post-read-more">
-                      <a href="#">Get On Rent</a>
-                    </div>
-                  </div>
-                </div>
+      <b> <span>Status: </span></b>
+      <span>{{machine.status}}</span>
 
 
-                <div class="blog-post">
-                  <div class="blog-post-img1">
-                    <img src= "assets/imgs/yrok3.jpg" alt="tree">
-                  </div>
-                  <div class="blog-post-info">
-                    <div class="blog-post-title">
-                      <h2>Harvestor</h2>
+    </div>
 
-                    </div>
-                    <div class="blog-post-date">
-                      <b> <span>Price: </span></b>
-                     <span>120 Rs / </span>
-                      <span>1 Day</span><br>
-
-                      <b> <span>Address: </span></b>
-                      <span>Sinchan Nagar, Pune -413502</span><br>
-
-                      <b> <span>Status: </span></b>
-                      <span>Available</span>
-
-
-                    </div>
-
-                    <div class="blog-post-read-more">
-                      <a href="#">Get On Rent</a>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="blog-post">
-                  <div class="blog-post-img1">
-                    <img src= "assets/imgs/machine2.jpg" alt="tree">
-                  </div>
-                  <div class="blog-post-info">
-                    <div class="blog-post-title">
-                      <h2>Floater</h2>
-
-                    </div>
-                    <div class="blog-post-date">
-                      <b> <span>Price: </span></b>
-                     <span>100 Rs / </span>
-                      <span>1 Day</span><br>
-
-                      <b> <span>Address: </span></b>
-                      <span>Sinchan Nagar, Pune -413502</span><br>
-
-                      <b> <span>Status: </span></b>
-                      <span>Available</span>
-
-
-                    </div>
-
-                    <div class="blog-post-read-more">
-                      <a href="#">Get On Rent</a>
-                    </div>
-                  </div>
-                </div>
-
+    <div class="blog-post-read-more">
+      <a href="#">Get On Rent</a>
+    </div>
+  </div>
+</div>

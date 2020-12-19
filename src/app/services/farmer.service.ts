@@ -11,4 +11,8 @@ export class FarmerService {
   getFarmers() {
     return this.http.get('/farmer');
   }
+
+  getMachines() {
+    return this.http.get('/machine');
+  }
 }

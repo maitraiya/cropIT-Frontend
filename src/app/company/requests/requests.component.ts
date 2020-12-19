@@ -20,7 +20,6 @@ export class RequestsComponent implements OnInit {
 
   getAllPost() {
     this.companyService.getPosts().subscribe((res: any) => {
-      console.log('res', res)
       this.posts = res;
     });
   }
