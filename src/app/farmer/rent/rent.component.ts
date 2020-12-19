@@ -9,6 +9,7 @@ import { FarmerService } from 'src/app/services/farmer.service';
 export class RentComponent implements OnInit {
 
   machines = [];
+  date;
 
   constructor(
     private farmerService: FarmerService
@@ -22,6 +23,10 @@ export class RentComponent implements OnInit {
     this.farmerService.getMachines().subscribe((res: any) => {
       this.machines = res;
     })
+  }
+
+  onChange(result: Date[]): void {
+    console.log('onChange: ', result);
   }
 
 }
