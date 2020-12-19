@@ -2,10 +2,10 @@
   <button class="btn btn-primary" routerLink="../add-post" type="button">Add new Post</button>
 </div>
 
-<div class="text-center text-danger" *ngIf="!posts.length">
-  <h4>No posts added by you please add</h4>
+<div class="text-center text-danger" *ngIf="!expiredPosts.length">
+  <h4>No expiredPosts added by you please add</h4>
 </div>
-<div *ngFor="let post of posts" class="blog-post">
+<div *ngFor="let post of expiredPosts" class="blog-post">
   <div class="blog-post-img1">
     <img src="assets/imgs/company7.png" alt="tree">
   </div>

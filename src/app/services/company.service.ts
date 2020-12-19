@@ -22,6 +22,10 @@ export class CompanyService {
     return this.http.get('/posting');
   }
 
+  getExpiredPosts() {
+    return this.http.get('/posting');
+  }
+
   createPost(body) {
     return this.http.post('/posting', body);
   }

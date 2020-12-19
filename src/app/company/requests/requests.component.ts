@@ -8,7 +8,7 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class RequestsComponent implements OnInit {
 
-  posts = [];
+  expiredPosts = [];
 
   constructor(
     private companyService: CompanyService
@@ -19,8 +19,8 @@ export class RequestsComponent implements OnInit {
   }
 
   getAllPost() {
-    this.companyService.getPosts().subscribe((res: any) => {
-      this.posts = res;
+    this.companyService.getExpiredPosts().subscribe((res: any) => {
+      this.expiredPosts = res;
     });
   }
 

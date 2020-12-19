@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-company-dashboard',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyDashboardComponent implements OnInit {
 
-  constructor() { }
+  posts = [];
+
+  constructor(
+    private companyService: CompanyService
+  ) { }
 
   ngOnInit(): void {
+    this.getAllPost();
+  }
+
+  getAllPost() {
+    this.companyService.getPosts().subscribe((res: any) => {
+      this.posts = res;
+    });
   }
 
 }
