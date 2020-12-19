@@ -2,81 +2,30 @@
   <button class="btn btn-primary" routerLink="../add-post" type="button">Add new Post</button>
 </div>
 
-<div class="blog-post">
+<div class="text-center text-danger" *ngIf="!posts.length">
+  <h4>No posts added by you please add</h4>
+</div>
+<div *ngFor="let post of posts" class="blog-post">
   <div class="blog-post-img1">
     <img src="assets/imgs/company7.png" alt="tree">
   </div>
   <div class="blog-post-info">
     <div class="blog-post-title">
-      <h2>Farm To Energy Pvt ltd</h2>
+      <h2>{{post.company.user.name}}</h2>
 
     </div>
     <div class="blog-post-date">
       <b> <span>Material: </span></b>
-      <span>Wheat</span><br>
+      <span>{{post.material.name}}</span><br>
 
       <b> <span>Cost: </span></b>
-      <span>2400rs /acre</span><br>
+      <span>{{post.cost}}rs /acre</span><br>
 
       <b> <span>Delivery Date: </span></b>
       <span>June 21 2020</span><br>
 
       <b> <span>Expiry Date: </span></b>
-      <span>Nov 28 2020</span><br>
+      <span>{{post.expiryDate | date: 'MMM dd yyyy' }}</span><br>
     </div>
-  </div>
-</div>
-
-
-<div class="blog-post">
-  <div class="blog-post-img1">
-    <img src="assets/imgs/company7.png" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>Farm To Energy Pvt ltd</h2>
-
-    </div>
-    <div class="blog-post-date">
-      <b> <span>Material: </span></b>
-      <span>Corn</span><br>
-
-      <b> <span>Cost: </span></b>
-      <span>3300rs /acre</span><br>
-
-      <b> <span>Delivery Date: </span></b>
-      <span>Mar 16 2020</span><br>
-
-      <b> <span>Expiry Date: </span></b>
-      <span>June 28 2020</span><br>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="blog-post">
-  <div class="blog-post-img1">
-    <img src="assets/imgs/company7.png" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>Farm To Energy Pvt ltd</h2>
-
-    </div>
-    <div class="blog-post-date">
-      <b> <span>Material: </span></b>
-      <span>Sugarcane</span><br>
-
-      <b> <span>Cost: </span></b>
-      <span>4800rs /acre</span><br>
-
-      <b> <span>Delivery Date: </span></b>
-      <span>April 14 2020</span><br>
-
-      <b> <span>Expiry Date: </span></b>
-      <span>Dec 4 2020</span><br>
-    </div>
-
   </div>
 </div>

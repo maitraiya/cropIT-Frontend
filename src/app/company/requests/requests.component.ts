@@ -8,6 +8,8 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class RequestsComponent implements OnInit {
 
+  posts = [];
+
   constructor(
     private companyService: CompanyService
   ) { }
@@ -17,9 +19,9 @@ export class RequestsComponent implements OnInit {
   }
 
   getAllPost() {
-    this.companyService.getPosts().subscribe((res) => {
+    this.companyService.getPosts().subscribe((res: any) => {
       console.log('res', res)
-
+      this.posts = res;
     });
   }
 
