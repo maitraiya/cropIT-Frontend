@@ -1,3 +1,6 @@
+<div class="text-center text-danger m-4" *ngIf="!machines.length">
+    <h4>No Rented machines yet</h4>
+</div>
 <div *ngFor="let machine of machines" class="blog-post">
     <div class="blog-post-img1">
         <img [src]="machine.image" alt="tree">

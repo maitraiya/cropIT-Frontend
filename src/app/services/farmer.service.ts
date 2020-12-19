@@ -17,6 +17,6 @@ export class FarmerService {
   }
 
   getMyRentedMachines() {
-    return this.http.get('/machine');
+    return this.http.get('/rented');
   }
 }
