@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-requests',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private companyService: CompanyService
+  ) { }
 
   ngOnInit(): void {
+    this.getAllPost();
+  }
+
+  getAllPost() {
+    this.companyService.getPosts().subscribe((res) => {
+      console.log('res', res)
+
+    });
   }
 
 }

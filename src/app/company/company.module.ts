@@ -9,13 +9,17 @@ import { CompanyDashboardComponent } from './company-dashboard/company-dashboard
 import { RequestsComponent } from './requests/requests.component';
 import { OrdersComponent } from './orders/orders.component';
 import { TransportComponent } from './transport/transport.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [CompanyComponent, CompanyProfileComponent, CompanyProfileEditComponent, CompanyDashboardComponent, RequestsComponent, OrdersComponent, TransportComponent],
+  declarations: [CompanyComponent, CompanyProfileComponent, CompanyProfileEditComponent, CompanyDashboardComponent, RequestsComponent, OrdersComponent, TransportComponent, AddPostComponent],
   imports: [
     CommonModule,
-    CompanyRoutingModule
+    CompanyRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CompanyModule { }

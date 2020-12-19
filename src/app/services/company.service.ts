@@ -17,4 +17,12 @@ export class CompanyService {
   getAllDeals() {
     return this.http.get('/deal');
   }
+
+  getPosts() {
+    return this.http.get('/posting');
+  }
+
+  createPost(body) {
+    return this.http.post('/posting', body);
+  }
 }
