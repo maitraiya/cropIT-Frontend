@@ -22,7 +22,6 @@ export class HttpService {
       };
     } else {
       localStorage.clear();
-      this.router.navigate(['/']);
     }
   }
 

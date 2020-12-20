@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FarmerService } from 'src/app/services/farmer.service';
 
 @Component({
   selector: 'app-post-list',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private farmerService: FarmerService
+  ) { }
 
   ngOnInit(): void {
+    this.getDeals();
+  }
+
+  getDeals() {
+    this.farmerService.getDeals().subscribe((res: any) => { 
+      console.log('res', res)
+
+    })
   }
 
 }

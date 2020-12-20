@@ -19,4 +19,12 @@ export class FarmerService {
   getMyRentedMachines() {
     return this.http.get('/rented');
   }
+
+  getDeals() {
+    return this.http.get('/deal');
+  }
+
+  acceptDeal(body) {
+    return this.http.post('/deal', body)
+  }
 }

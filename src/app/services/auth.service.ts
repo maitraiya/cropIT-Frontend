@@ -8,6 +8,8 @@ import { HttpService } from './http.service';
 })
 export class AuthService {
 
+  materials = [];
+
   constructor(
     private http: HttpService,
     private router: Router

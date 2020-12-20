@@ -30,4 +30,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  acceptDeal(post) { 
+    console.log('post', post)
+
+  }
+
 }
