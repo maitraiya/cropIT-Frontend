@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { CompanyService } from 'src/app/services/company.service';
@@ -21,7 +21,8 @@ export class CompanyProfileEditComponent implements OnInit {
     private authService: AuthService,
     private companyService: CompanyService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private active: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -72,7 +73,7 @@ export class CompanyProfileEditComponent implements OnInit {
 
   edit() {
     this.companyService.updateCompany(this.getBody()).subscribe((res: any) => {
-      this.router.navigate(['../profile'])
+      this.router.navigate(['../profile'], { relativeTo: this.active })
     }, () => {
       this.toastr.error('Error while updating profile')
     });
