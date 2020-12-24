@@ -37,6 +37,6 @@ export class CompanyService {
   }
 
   updateCompany(body) {
-    return this.http.put(`/company/${this.authService.getUserId()}`, body);
+    return this.http.post(`/company/${this.authService.getUserId()}`, body);
   }
 }
