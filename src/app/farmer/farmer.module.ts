@@ -12,16 +12,18 @@ import { PaymentsComponent } from './payments/payments.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MyRentedComponent } from './my-rented/my-rented.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { FarmerProfileEditComponent } from './farmer-profile-edit/farmer-profile-edit.component';
 
 @NgModule({
-  declarations: [FarmerComponent, HomeComponent, ProfileComponent, PostListComponent, RentComponent, ToolsComponent, PaymentsComponent, EditProfileComponent, MyRentedComponent],
+  declarations: [FarmerComponent, HomeComponent, ProfileComponent, PostListComponent, RentComponent, ToolsComponent, PaymentsComponent, EditProfileComponent, MyRentedComponent, FarmerProfileEditComponent],
   imports: [
     CommonModule,
     FarmerRoutingModule,
     ModalModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     NzDatePickerModule
   ]
 })

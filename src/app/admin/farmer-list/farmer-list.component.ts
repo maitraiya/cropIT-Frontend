@@ -22,7 +22,6 @@ export class FarmerListComponent implements OnInit {
 
   getFarmers() {
     this.farmerService.getFarmers().subscribe((res: any) => {
-      console.log('res', res)
 
     }, (error) => {
       this.toastrService.error(error.error, 'Error while getting farmers',)

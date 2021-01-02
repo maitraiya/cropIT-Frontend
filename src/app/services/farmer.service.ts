@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
 import { HttpService } from './http.service';
 
 @Injectable({
@@ -6,10 +7,17 @@ import { HttpService } from './http.service';
 })
 export class FarmerService {
 
-  constructor(private http: HttpService) { }
+  constructor(
+    private http: HttpService,
+    private authService: AuthService
+  ) { }
 
   getFarmers() {
     return this.http.get('/farmer');
+  }
+
+  updateFarmer(body) {
+    return this.http.post(`/farmer/${this.authService.getUserId()}`, body);
   }
 
   getMachines() {

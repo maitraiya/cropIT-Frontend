@@ -64,7 +64,6 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem('cropit-auth-token', res['cropit-auth-token']);
       this.router.navigate([`../../${res.userType}`]);
     }, (error) => {
-      console.log('error', error)
       if (error.status != 200) {
         this.toastrService.error(error.error)
       }

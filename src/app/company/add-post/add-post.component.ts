@@ -44,7 +44,6 @@ export class AddPostComponent implements OnInit {
 
   addPost() {
     this.companyService.createPost(this.newPostForm.value).subscribe((res) => {
-      console.log('res', res)
       this.cancel();
     })
   }

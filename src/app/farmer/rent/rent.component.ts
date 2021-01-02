@@ -26,7 +26,6 @@ export class RentComponent implements OnInit {
   }
 
   onChange(result: Date[]): void {
-    console.log('onChange: ', result);
   }
 
 }

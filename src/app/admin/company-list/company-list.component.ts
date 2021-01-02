@@ -20,7 +20,6 @@ export class CompanyListComponent implements OnInit {
 
   getCompanies() {
     this.companyService.getCompanies().subscribe((res: any) => {
-      console.log('res', res)
 
     }, (error) => {
       this.toastrService.error(error.error, 'Error while getting companies')

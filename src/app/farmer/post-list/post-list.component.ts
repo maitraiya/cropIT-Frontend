@@ -18,7 +18,6 @@ export class PostListComponent implements OnInit {
 
   getDeals() {
     this.farmerService.getDeals().subscribe((res: any) => { 
-      console.log('res', res)
 
     })
   }

@@ -25,7 +25,6 @@ export class CompanyProfileComponent implements OnInit {
     this.authService.getLoggedInUser().subscribe((res: any) => {
       this.company = res.user;
     }, (error) => {
-      console.log('error', error)
       this.toastr.error(error);
     });
   }
