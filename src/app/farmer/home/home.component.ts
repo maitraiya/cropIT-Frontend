@@ -27,10 +27,12 @@ export class HomeComponent implements OnInit {
   getPosts() {
     this.companyService.getPosts().subscribe((res: any) => {
       this.posts = res;
+    }, (error) => { 
+      console.log('error', error)
     })
   }
 
-  acceptDeal(post) { 
+  acceptDeal(post) {
 
   }
 
