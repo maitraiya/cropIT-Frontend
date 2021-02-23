@@ -61,8 +61,7 @@ export class RegisterComponent implements OnInit {
   register() {
     this.authService.signUp(this.getBody()).subscribe((res: any) => {
       this.toastrService.success('Register Successful');
-      localStorage.setItem('cropit-auth-token', res['cropit-auth-token']);
-      this.router.navigate([`../../${res.userType}`]);
+      this.router.navigate(['/']);
     }, (error) => {
       if (error.status != 200) {
         this.toastrService.error(error.error)
