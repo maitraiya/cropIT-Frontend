@@ -6,7 +6,7 @@ import { CompanyComponent } from './company.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { CompanyProfileEditComponent } from './company-profile-edit/company-profile-edit.component';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
-import { RequestsComponent } from './requests/requests.component';
+import { MyHistoryComponent } from './requests/my-history.component';
 import { OrdersComponent } from './orders/orders.component';
 import { TransportComponent } from './transport/transport.component';
 import { AddPostComponent } from './add-post/add-post.component';
@@ -14,7 +14,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [CompanyComponent, CompanyProfileComponent, CompanyProfileEditComponent, CompanyDashboardComponent, RequestsComponent, OrdersComponent, TransportComponent, AddPostComponent],
+  declarations: [
+    CompanyComponent,
+    CompanyProfileComponent,
+    CompanyProfileEditComponent,
+    CompanyDashboardComponent,
+    MyHistoryComponent,
+    OrdersComponent,
+    TransportComponent,
+    AddPostComponent
+  ],
   imports: [
     CommonModule,
     CompanyRoutingModule,

@@ -6,7 +6,7 @@ import { CompanyProfileEditComponent } from './company-profile-edit/company-prof
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { CompanyComponent } from './company.component';
 import { OrdersComponent } from './orders/orders.component';
-import { RequestsComponent } from './requests/requests.component';
+import { MyHistoryComponent } from './requests/my-history.component';
 import { TransportComponent } from './transport/transport.component';
 
 
@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'profile', component: CompanyProfileComponent },
       { path: 'edit', component: CompanyProfileEditComponent },
       { path: 'orders', component: OrdersComponent },
-      { path: 'requests', component: RequestsComponent },
+      { path: 'history', component: MyHistoryComponent },
       { path: 'transport', component: TransportComponent },
       { path: 'add-post', component: AddPostComponent },
     ]

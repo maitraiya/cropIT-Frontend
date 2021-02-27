@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
-  selector: 'app-requests',
-  templateUrl: './requests.component.html',
-  styleUrls: ['./requests.component.css']
+  selector: 'app-my-history',
+  templateUrl: './my-history.component.html',
+  styleUrls: ['./my-history.component.css']
 })
-export class RequestsComponent implements OnInit {
+export class MyHistoryComponent implements OnInit {
 
   expiredPosts = [];
 
