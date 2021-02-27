@@ -6,7 +6,7 @@ import { CompanyComponent } from './company.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { CompanyProfileEditComponent } from './company-profile-edit/company-profile-edit.component';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
-import { MyHistoryComponent } from './requests/my-history.component';
+import { MyHistoryComponent } from './my-history/my-history.component';
 import { OrdersComponent } from './orders/orders.component';
 import { TransportComponent } from './transport/transport.component';
 import { AddPostComponent } from './add-post/add-post.component';
