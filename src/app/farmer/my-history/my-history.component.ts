@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FarmerService } from 'src/app/services/farmer.service';
 
 @Component({
-  selector: 'app-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css']
+  selector: 'app-my-history',
+  templateUrl: './my-history.component.html',
+  styleUrls: ['./my-history.component.css']
 })
-export class PostListComponent implements OnInit {
+export class MyHistoryComponent implements OnInit {
 
   constructor(
     private farmerService: FarmerService

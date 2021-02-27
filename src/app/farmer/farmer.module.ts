@@ -5,7 +5,7 @@ import { FarmerRoutingModule } from './farmer-routing.module';
 import { FarmerComponent } from './farmer.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { PostListComponent } from './post-list/post-list.component';
+import { MyHistoryComponent } from './my-history/my-history.component';
 import { RentComponent } from './rent/rent.component';
 import { ToolsComponent } from './tools/tools.component';
 import { PaymentsComponent } from './payments/payments.component';
@@ -17,7 +17,18 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { FarmerProfileEditComponent } from './farmer-profile-edit/farmer-profile-edit.component';
 
 @NgModule({
-  declarations: [FarmerComponent, HomeComponent, ProfileComponent, PostListComponent, RentComponent, ToolsComponent, PaymentsComponent, EditProfileComponent, MyRentedComponent, FarmerProfileEditComponent],
+  declarations: [
+    FarmerComponent,
+    HomeComponent,
+    ProfileComponent,
+    MyHistoryComponent,
+    RentComponent,
+    ToolsComponent,
+    PaymentsComponent,
+    EditProfileComponent,
+    MyRentedComponent,
+    FarmerProfileEditComponent
+  ],
   imports: [
     CommonModule,
     FarmerRoutingModule,

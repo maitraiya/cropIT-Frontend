@@ -5,7 +5,7 @@ import { FarmerComponent } from './farmer.component';
 import { HomeComponent } from './home/home.component';
 import { MyRentedComponent } from './my-rented/my-rented.component';
 import { PaymentsComponent } from './payments/payments.component';
-import { PostListComponent } from './post-list/post-list.component';
+import { MyHistoryComponent } from './my-history/my-history.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RentComponent } from './rent/rent.component';
 import { ToolsComponent } from './tools/tools.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'posts', component: PostListComponent },
+      { path: 'history', component: MyHistoryComponent },
       { path: 'tools', component: ToolsComponent },
       { path: 'payments', component: PaymentsComponent },
       { path: 'profile', component: ProfileComponent },
