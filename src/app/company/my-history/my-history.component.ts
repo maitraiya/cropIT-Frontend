@@ -20,7 +20,15 @@ export class MyHistoryComponent implements OnInit {
 
   getAllPost() {
     this.companyService.getExpiredPosts().subscribe((res: any) => {
-      this.expiredPosts = res;
+      this.expiredPosts = this.getExpiredPosts(res);
+    });
+  }
+
+  getExpiredPosts(posts: []) {
+    return posts.filter((o: any) => {
+      if (new Date(o.expiryDate) > new Date()) {
+        return o;
+      }
     });
   }
 
