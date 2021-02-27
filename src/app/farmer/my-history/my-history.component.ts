@@ -22,4 +22,12 @@ export class MyHistoryComponent implements OnInit {
     })
   }
 
+  onDropDownChange(value) {
+    value == 'Completed' ? this.getCompletedList() : this.getPendingList();
+  }
+
+  getCompletedList() { }
+
+  getPendingList() { }
+
 }
