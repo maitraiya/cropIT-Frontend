@@ -23,4 +23,12 @@ export class MyRentedComponent implements OnInit {
       this.machines = res;
     })
   }
+
+  onDropDownChange(value) {
+    value == 'Paid' ? this.getPaidList() : this.getUnPaidList();
+  }
+
+  getPaidList() { }
+
+  getUnPaidList() { }
 }

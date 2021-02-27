@@ -1,3 +1,9 @@
+<div class="drop-down form-group">
+    <select #option id="my-select" class="form-control" (change)="onDropDownChange(option.value)">
+        <option>UnPaid</option>
+        <option>Paid</option>
+    </select>
+</div>
 <div class="text-center text-danger m-4" *ngIf="!machines.length">
     <h4>No Rented machines yet</h4>
 </div>
