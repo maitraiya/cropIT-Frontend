@@ -49,7 +49,7 @@ export class AddPostComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['../requests'], { relativeTo: this.active })
+    this.router.navigate(['../history'], { relativeTo: this.active })
   }
 
 }
