@@ -21,21 +21,25 @@
   </div>
   <div class="blog-post-info">
     <div class="blog-post-title">
-      <h2>Kriya Labs</h2>
+      <h2>{{post?.company?.user?.name}}</h2>
 
     </div>
     <div class="blog-post-date">
       <b> <span>Pickup Date: </span></b>
-      <span>Oct 14 2020</span><br>
+      <span>{{post?.expiryDate | date}}</span><br>
       <b> <span>Type </span></b>
-      <span>Corn </span><br>
+      <span>{{post?.material?.name}} </span><br>
       <b> <span>Price: </span></b>
       <span>2000 Rs/Acre </span><br>
 
       <b> <span>Address: </span></b>
-      <span>Sinchan Nagar, Pune -413502</span>
+      <span>{{post?.company?.user?.address}}</span>
     </div>
-    <div (click)="openModal(template)" class="blog-post-read-more pb-4">
+    <!-- <div (click)="openModal(template)" class="blog-post-read-more pb-4">
+      <a>Price predictor</a>
+    </div> -->
+
+    <div (click)="getPrice(post._id)" class="blog-post-read-more pb-4">
       <a>Price predictor</a>
     </div>
     <div (click)="acceptDeal(post)" class="blog-post-read-more">

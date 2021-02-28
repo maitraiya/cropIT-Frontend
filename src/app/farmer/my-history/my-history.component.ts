@@ -8,6 +8,8 @@ import { FarmerService } from 'src/app/services/farmer.service';
 })
 export class MyHistoryComponent implements OnInit {
 
+  deals = [];
+
   constructor(
     private farmerService: FarmerService
   ) { }
@@ -18,7 +20,7 @@ export class MyHistoryComponent implements OnInit {
 
   getDeals() {
     this.farmerService.getDeals().subscribe((res: any) => { 
-
+      this.deals = res;
     })
   }
 
