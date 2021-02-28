@@ -8,13 +8,16 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class OrdersComponent implements OnInit {
 
+  orders = [];
+
   constructor(
     private companyService: CompanyService
   ) { }
 
   ngOnInit(): void {
-    this.companyService.getAllDeals().subscribe((res) => { 
-
+    this.companyService.getAllDeals().subscribe((res: any) => {
+      console.log('res', res[0])
+      this.orders = res;
     })
   }
 

@@ -1,115 +1,24 @@
-<div class="blog-post">
+<div *ngFor="let order of orders" class="blog-post">
   <div class="blog-post-img1">
-    <img src= "assets/imgs/farmer.png" alt="tree">
+    <img src="assets/imgs/farmer.png" alt="tree">
   </div>
   <div class="blog-post-info">
     <div class="blog-post-title">
-      <h2>Harbhajan Singh</h2>
+      <h2>{{order?.acceptedBy?.user?.name}}</h2>
 
     </div>
     <div class="blog-post-date">
-     <b> <span>Delivery date: </span></b>
-      <span>June 12 2020</span><br>
+      <b> <span>Delivery date: </span></b>
+      <span>{{order?.posting?.expiryDate | date}}</span><br>
       <b> <span>Stubble Type: </span></b>
-         <span>Corn </span><br>
+      <span>{{order?.posting?.material?.name}} </span><br>
       <b> <span>Stubble Price: </span></b>
-      <span>2000 Rs /1 Tone</span><br>
+      <span>{{order?.posting?.cost}} Rs /1 Tone</span><br>
     </div>
     <div class="blog-post-desc">
       <b> <span>Location: </span></b>
-      <span>Sinchan Nagar, Pune -413502 </span><br>
+      <span>{{order?.acceptedBy?.user?.address}} </span><br>
     </div>
-  </div>
-</div>
-
-
-<div class="blog-post">
-  <div class="blog-post-img1">
-    <img src= "assets/imgs/farmer2.png" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>Roshan Singh Sodhi</h2>
-
-    </div>
-    <div class="blog-post-date">
-     <b> <span>Delivery date: </span></b>
-      <span>Oct 10 2020</span><br>
-      <b> <span>Stubble Type: </span></b>
-         <span>Wheat </span><br>
-      <b> <span>Price: </span></b>
-      <span>2400 Rs /1 Tone</span>
-    </div>
-    <b> <span>Location: </span></b>
-    <span>Sinchan Nagar, Pune -413502 </span><br>
-  </div>
-</div>
-
-<div class="blog-post">
-  <div class="blog-post-img1">
-    <img src= "assets/imgs/farmer.png" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>Vithoba Kamble </h2>
-
-    </div>
-    <div class="blog-post-date">
-     <b> <span>Delivery Date: </span></b>
-      <span>Dec 12 2020</span><br>
-      <b> <span>Stubble Type: </span></b>
-         <span>Rice </span><br>
-      <b> <span>Price: </span></b>
-      <span>3000 Rs /1 Tone</span>
-    </div>
-    <b> <span>Location: </span></b>
-    <span>Sinchan Nagar, Pune -413502 </span><br>
-  </div>
-</div>
-
-
-<div class="blog-post">
-  <div class="blog-post-img1">
-    <img src= "assets/imgs/farmer2.png" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>Raam Pawar</h2>
-
-    </div>
-    <div class="blog-post-date">
-     <b> <span>Delivery Date: </span></b>
-      <span>June 12 2020</span><br>
-      <b> <span>Stubble Type: </span></b>
-         <span>Corn </span><br>
-      <b> <span>Price: </span></b>
-      <span>2000 Rs /1 Tone</span>
-    </div>
-    <b> <span>Location: </span></b>
-      <span>Sinchan Nagar, Pune -413502 </span><br>
-  </div>
-</div>
-
-
-<div class="blog-post">
-  <div class="blog-post-img1">
-    <img src= "assets/imgs/farmer.png" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>Gurucharan Singh</h2>
-
-    </div>
-    <div class="blog-post-date">
-     <b> <span>Delivery Date: </span></b>
-      <span>June 12 2020</span><br>
-      <b> <span>Stubble Type: </span></b>
-         <span>Corn </span><br>
-      <b> <span>Price: </span></b>
-      <span>2000 Rs /1 Tone</span>
-    </div>
-    <b> <span>Location:</span></b>
-      <span>Sinchan Nagar, Pune -413502 </span><br>
   </div>
 </div>
 

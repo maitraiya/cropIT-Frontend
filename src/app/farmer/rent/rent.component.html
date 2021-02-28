@@ -4,7 +4,7 @@
   </div>
   <div class="blog-post-info">
     <div class="blog-post-title">
-      <h2>Rice Cutting Machine</h2>
+      <h2>{{machine.name}}</h2>
 
     </div>
     <div class="blog-post-date">
@@ -24,7 +24,7 @@
       <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
     </div>
     <div class="blog-post-read-more">
-      <a href="#">Get On Rent</a>
+      <button [disabled]="date.length !== 2" (click)="getOnRent(machine)" class="btn btn-primary" type="button">Get On Rent</button>
     </div>
   </div>
 </div>
