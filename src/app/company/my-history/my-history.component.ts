@@ -26,7 +26,7 @@ export class MyHistoryComponent implements OnInit {
 
   getExpiredPosts(posts: []) {
     return posts.filter((o: any) => {
-      if (new Date(o.expiryDate) > new Date()) {
+      if (new Date(o.expiryDate) < new Date()) {
         return o;
       }
     });
