@@ -10,6 +10,7 @@
             <input formControlName="password" type="password" class="form-control" placeholder="Password">
         </div>
         <button (click)="login()" [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">login</button>
+        <button routerLink="../forgotPassword"  class="btn btn-primary" type="button">ForgotPasswod</button>
         <div>
             <a routerLink="../register"><small>Click here to register</small></a>
         </div>
