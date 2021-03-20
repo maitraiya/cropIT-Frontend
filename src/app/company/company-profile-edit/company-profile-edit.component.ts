@@ -53,6 +53,7 @@ export class CompanyProfileEditComponent implements OnInit {
 
   buildForm() {
     this.profileForm = this.fb.group({
+      profile: [null],
       name: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       address: [null, [Validators.required]],
@@ -63,6 +64,7 @@ export class CompanyProfileEditComponent implements OnInit {
   }
 
   setForm(company) {
+    this.profileForm.get('profile').setValue(company.user.profile);
     this.profileForm.get('name').setValue(company.user.name);
     this.profileForm.get('phone').setValue(company.user.phone);
     this.profileForm.get('address').setValue(company.user.address);
@@ -82,6 +84,7 @@ export class CompanyProfileEditComponent implements OnInit {
   getBody() {
     const body = {
       user: {
+        profile: this.profileForm.get('profile').value,
         name: this.profileForm.get('name').value,
         phone: this.profileForm.get('phone').value,
         address: this.profileForm.get('address').value,
@@ -93,6 +96,20 @@ export class CompanyProfileEditComponent implements OnInit {
       }
     }
     return body;
+  }
+
+  uploadFile(event) {
+    let reader = new FileReader(); // HTML5 FileReader API
+    let file = event.target.files[0];
+    if (event.target.files && event.target.files[0]) {
+      reader.readAsDataURL(file);
+      // When file uploads set it to file formcontrol
+      reader.onload = () => {
+        this.profileForm.patchValue({
+          profile: reader.result
+        });
+      }
+    }
   }
 
 }

@@ -3,6 +3,14 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
+                    <input type="file" class="form-control" (change)="uploadFile($event)">
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
                     <label>Name</label>
                     <input formControlName="name" type="text" class="form-control" placeholder="Enter name">
                 </div>
