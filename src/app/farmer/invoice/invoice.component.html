@@ -1,0 +1,23 @@
+<button (click)="convetToPDF()" class="btn btn-warning" type="button">Download invoice</button>
+<p>To,</p>
+<br>
+<div class="container">
+  <div id="pdfTable" #pdfTable>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th>Company</th>
+          <th>Material</th>
+          <th>Cost</th>
+          <th>Expiry Date:</th>
+        </tr>
+        <tr>
+          <td>{{selectedDeal?.posting?.addedBy?.user?.name}}</td>
+          <td>{{selectedDeal?.posting?.material?.name}}</td>
+          <td>{{selectedDeal?.posting?.cost}}rs /acre</td>
+          <td>{{selectedDeal?.posting?.expiryDate | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,26 +1,32 @@
-<div *ngFor="let deal of deals" class="blog-post">
-  <div class="blog-post-img1">
-    <img src= "assets/imgs/company6.jpeg" alt="tree">
-  </div>
-  <div class="blog-post-info">
-    <div class="blog-post-title">
-      <h2>{{deal?.posting?.addedBy?.user?.name}}</h2>
-
+<ng-container *ngFor="let deal of deals">
+  <div *ngFor="let deal of deals" class="blog-post">
+    <div class="blog-post-img1">
+      <img src="assets/imgs/company6.jpeg" alt="tree">
     </div>
-    <div class="blog-post-date">
-     <b> <span>Material: </span></b>
-      <span>{{deal?.posting?.material?.name}}</span><br>
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>{{deal?.posting?.addedBy?.user?.name}}</h2>
 
-    <b> <span>Cost: </span></b>
-    <span>{{deal?.posting?.cost}}rs /acre</span><br>
+      </div>
+      <div class="blog-post-date">
+        <b> <span>Material: </span></b>
+        <span>{{deal?.posting?.material?.name}}</span><br>
 
-    <b> <span>Expiry Date: </span></b>
-    <span>{{deal?.posting?.expiryDate | date}}</span><br>
+        <b> <span>Cost: </span></b>
+        <span>{{deal?.posting?.cost}}rs /acre</span><br>
+
+        <b> <span>Expiry Date: </span></b>
+        <span>{{deal?.posting?.expiryDate | date}}</span><br>
+
+        <button (click)="openModal(deal, invoice)" class="btn btn-primary" type="button">View invoice</button>
+        <br>
+
+      </div>
+    </div>
+
   </div>
-  </div>
-</div>
+</ng-container>
 
-
-
-
-
+<ng-template #invoice>
+<app-invoice [selectedDeal]="selectedDeal"></app-invoice>
+</ng-template>

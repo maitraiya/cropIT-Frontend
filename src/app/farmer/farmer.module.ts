@@ -15,6 +15,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { FarmerProfileEditComponent } from './farmer-profile-edit/farmer-profile-edit.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FarmerProfileEditComponent } from './farmer-profile-edit/farmer-profile
     PaymentsComponent,
     EditProfileComponent,
     MyRentedComponent,
-    FarmerProfileEditComponent
+    FarmerProfileEditComponent,
+    InvoiceComponent
   ],
   imports: [
     CommonModule,
