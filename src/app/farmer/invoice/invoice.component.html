@@ -1,5 +1,8 @@
 <button (click)="convetToPDF()" class="btn btn-warning" type="button">Download invoice</button>
-<p>To,</p>
+<p>From,</p>
+<p>{{selectedDeal?.posting?.addedBy?.user?.name}},</p>
+<p>{{selectedDeal?.posting?.addedBy?.user?.email}},</p>
+<p>{{selectedDeal?.posting?.addedBy?.user?.phone}},</p>
 <br>
 <div class="container">
   <div id="pdfTable" #pdfTable>
