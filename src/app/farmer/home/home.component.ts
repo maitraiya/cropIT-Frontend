@@ -8,19 +8,19 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
   posts = [];
   modalRef: BsModalRef;
   predictedPrice;
+  price;
   constructor(
     private modalService: BsModalService,
     private companyService: CompanyService,
     private farmerService: FarmerService,
     private toastrService: ToastrService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getPosts();
@@ -31,15 +31,18 @@ export class HomeComponent implements OnInit {
   }
 
   getPosts() {
-    this.companyService.getPosts().subscribe((res: any) => {
-      this.posts = this.getFuturePosts(_.flatten(res));
-    }, (error) => {
-      console.log('error', error)
-    })
+    this.companyService.getPosts().subscribe(
+      (res: any) => {
+        this.posts = this.getFuturePosts(_.flatten(res));
+      },
+      (error) => {
+        console.log('error', error);
+      }
+    );
   }
 
   getFuturePosts(posts: any[]): any[] {
-    return posts.filter(o => {
+    return posts.filter((o) => {
       if (new Date(o.expiryDate) > new Date()) {
         return o;
       }
@@ -50,22 +53,24 @@ export class HomeComponent implements OnInit {
     const data = {
       posting: post._id,
       addedBy: post.addedBy,
-      acceptedBy: localStorage.getItem('userId')
-    }
-    this.farmerService.acceptDeal(data).subscribe((res: any) => {
-      console.log('res', res)
-      this.toastrService.success('Deal added successfully');
-    },(err) => { 
-      console.log('err', err)
-      this.toastrService.error('Something went wrong');
-    })
+      acceptedBy: localStorage.getItem('userId'),
+    };
+    this.farmerService.acceptDeal(data).subscribe(
+      (res: any) => {
+        console.log('res', res);
+        this.toastrService.success('Deal added successfully');
+      },
+      (err) => {
+        console.log('err', err);
+        this.toastrService.error('Something went wrong');
+      }
+    );
   }
 
-  getPrice(id) {
-    return this.farmerService.pricePredictor(id).subscribe((price) => {
-      console.log('price', price)
-
-    })
+  getPrice(post) {
+    return this.farmerService.pricePredictor(post.id).subscribe((price) => {
+      console.log('price', price);
+      post.price = price;
+    });
   }
-
 }

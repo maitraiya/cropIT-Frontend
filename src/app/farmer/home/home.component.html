@@ -39,8 +39,12 @@
       <a>Price predictor</a>
     </div> -->
 
-        <div (click)="getPrice(post._id)" class="blog-post-read-more pb-4">
+        <div (click)="getPrice(post)" class="blog-post-read-more pb-4">
             <a>Price predictor</a>
+        </div>
+
+        <div *ngIf="post.price" class="blog-post-read-more pb-4">
+            <p>Price is: {{post?.price?.data}}</p>
         </div>
         <div (click)="acceptDeal(post)" class="blog-post-read-more">
             <a>Accept</a>
