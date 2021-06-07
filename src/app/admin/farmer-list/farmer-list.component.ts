@@ -22,7 +22,7 @@ export class FarmerListComponent implements OnInit {
 
   getFarmers() {
     this.farmerService.getFarmers().subscribe((res: any) => {
-
+     this.farmers = res;
     }, (error) => {
       this.toastrService.error(error.error, 'Error while getting farmers',)
     });

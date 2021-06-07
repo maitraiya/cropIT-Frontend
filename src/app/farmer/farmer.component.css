@@ -1,11 +1,15 @@
-*
-{
+*{
 	padding:0;
 	margin:0;
 }
-body
+.body
 {
-	font-family:sans-serif;
+	font-family: 'Poppins', sans-serif;
+  /*background-image: url(../../assets/imgs/bg1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #154C1A;
+  background-size: cover;*/
 }
 .icon
 {
@@ -33,7 +37,7 @@ body
 }
 .navbar-nav li a {
 	color:#fff !important;
-	font-weight: 600;
+	font-weight: 500;
 	float:right;
 	text-align:left;
 	margin-right:20px;
@@ -45,7 +49,7 @@ body
 .fa-bars
 {
 	color: fff;
-	font-size:30px !important;
+	font-size:20px !important;
 }
 .navbar-toggler{
 	outline:none !important;
@@ -79,5 +83,6 @@ body
 }
 
 .active {
-	background-color: black;
+  border-radius: 20px;
+	background-color: yellowgreen;
 }

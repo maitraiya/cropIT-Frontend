@@ -1,7 +1,8 @@
-
+<img class="image" src="./assets/imgs/bg1.jpg">
 <div class="text-center text-danger m-4" *ngIf="!machines.length">
     <h4>No Rented machines yet</h4>
 </div>
+<div class="homeb">
 <div *ngFor="let machine of machines" class="blog-post">
     <div class="blog-post-img1">
         <img [src]="machine.machine.image" alt="tree">
@@ -26,4 +27,5 @@
         </div>
 
     </div>
+</div>
 </div>

@@ -1,18 +1,42 @@
-<div class="login">
-    <form [formGroup]="loginForm">
-        <div class="form-group">
-            <label>Email address</label>
-            <input formControlName="email" type="email" class="form-control" placeholder="Enter email">
-            <small *ngIf="loginForm.get('email').getError('required') && loginForm.get('email').touched" class="text-danger">Please enter email</small>
+<img class="wave" src="./assets/image/wave.png">
+ <div class="container">
+    <div class="img">
+      <img src="./assets/image/bg.svg">
+    </div>
+
+    <div class="login">
+      <form [formGroup]="loginForm">
+          <img src="assets/image/avatar.svg">
+          <h2 class="title">Welcome</h2>
+          <div class="form-group one">
+              <div class="i">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </div>
+
+              <div class="div">
+                <!-- <h5>Email address</h5> -->
+                <input formControlName="email" type="email" class="form-control" placeholder="Email Address">
+                <small *ngIf="loginForm.get('email').getError('required') && loginForm.get('email').touched" class="text-danger">Please enter email</small>
+              </div>
+          </div>
+
+          <div class="form-group pass">
+              <div class="i">
+                <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+              </div>
+
+              <div class="div">
+               <!-- <h5>Password</h5> -->
+                <input formControlName="password" type="password" class="form-control" placeholder="Password">
+             </div>
+
+          </div>
+          <a routerLink="../forgotPassword">Forgot Password?</a>
+          <button (click)="login()" [disabled]="loginForm.invalid" type="submit" class="btn">login</button>
+         <div>
+            <a routerLink="../register">Click here to register</a>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input formControlName="password" type="password" class="form-control" placeholder="Password">
-        </div>
-        <button (click)="login()" [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">login</button>
-        <button routerLink="../forgotPassword"  class="btn btn-primary" type="button">ForgotPasswod</button>
-        <div>
-            <a routerLink="../register"><small>Click here to register</small></a>
-        </div>
-    </form>
-</div>
+      </form>
+ </div>
+ </div>
+

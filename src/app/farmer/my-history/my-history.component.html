@@ -1,3 +1,5 @@
+<img class="image" src="./assets/imgs/bg1.jpg">
+<div class="homeb">
 <ng-container *ngFor="let deal of deals">
   <div *ngFor="let deal of deals" class="blog-post">
     <div class="blog-post-img1">
@@ -6,7 +8,6 @@
     <div class="blog-post-info">
       <div class="blog-post-title">
         <h2>{{deal?.posting?.addedBy?.user?.name}}</h2>
-
       </div>
       <div class="blog-post-date">
         <b> <span>Material: </span></b>
@@ -18,7 +19,7 @@
         <b> <span>Expiry Date: </span></b>
         <span>{{deal?.posting?.expiryDate | date}}</span><br>
 
-        <button (click)="openModal(deal, invoice)" class="btn btn-primary" type="button">View invoice</button>
+        <button (click)="openModal(deal, invoice)" class="btn" type="button">View invoice</button>
         <br>
 
       </div>
@@ -26,7 +27,7 @@
 
   </div>
 </ng-container>
-
+</div>
 <ng-template #invoice>
 <app-invoice [selectedDeal]="selectedDeal"></app-invoice>
 </ng-template>

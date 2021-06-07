@@ -9,6 +9,8 @@ import { CompanyService } from 'src/app/services/company.service';
 })
 export class CompanyListComponent implements OnInit {
 
+  companylist = [];
+
   constructor(
     private companyService: CompanyService,
     private toastrService: ToastrService,
@@ -20,7 +22,8 @@ export class CompanyListComponent implements OnInit {
 
   getCompanies() {
     this.companyService.getCompanies().subscribe((res: any) => {
-
+      this.companylist = res;
+      console.log(res);
     }, (error) => {
       this.toastrService.error(error.error, 'Error while getting companies')
     })

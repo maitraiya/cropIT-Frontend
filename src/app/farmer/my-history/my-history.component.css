@@ -1,77 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin: 0%;
+  padding: 0%;
+  }
 .blog-post{
     font-family: 'Poppins', sans-serif;
-    background-color: #a79885;
-    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.blog-post{
-    display: flex;
-    flex-direction:row;
-    margin: 0 0 0 8px;
-    justify-content: center;
-    align-items:center;
-    background-color: #f48c06;
-    font-family: 'Poppins', sans-serif;
-}
+    font-size: 14px;
+  }
 .blog-post-img1{
     flex:1;
     padding:2rem 2rem 2rem 0rem;
 }
-
 .blog-post-img2{
   flex:1;
   padding:2rem 2rem 2rem 0rem;
 }
-
-.blog-post-img3{
-  flex:1;
-  padding:2rem 2rem 2rem 0rem;
-}
-
 .blog-post-img1>img{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 50%;
     border-radius: 0.3rem;
     object-fit: cover;
     transform: translateX(-50px);
     box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
 }
-
+.image{
+  position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+  width: 100%;
+}
 .blog-post-img2>img{
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 50%;
   border-radius: 0.3rem;
   object-fit: cover;
   transform: translateX(-50px);
   box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
 }
-
-.blog-post-img3>img{
-  width: 100%;
-  height: 100%;
-  border-radius: 0.3rem;
-  object-fit: cover;
-  transform: translateX(-50px);
-  box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
-}
-
-.blog-post-info{
+.blog-post-{
     flex:2;
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
 }
 
 .blog-post-title h2{
-    color:#673AB7;
+    color:#158606;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
 }
 
+.btn{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    /*padding:0.5rem;*/
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7!important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
 
 .blog-post-date{
   padding-bottom: 15px;
@@ -204,33 +205,38 @@
 
 /*Large devices (laptops)*/
 @media only screen and (min-width: 992px){
-    .blog-post{
+
+   .homeb .blog-post{
     display: flex;
+    height: 50%;
+    width: 80%;
     flex-direction:row;
-    margin: 10rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
     justify-content: center;
     align-items:center;
-    background-color: white;
+    background:linear-gradient(45deg,rgb(245, 245, 134),rgb(149, 240, 149));
     font-family: 'Poppins', sans-serif;
     }
     .blog-post-img1{
     flex:1;
-    padding:2rem 2rem 2rem 0rem;
-}
+    padding: 2rem 2rem 2rem 0;
+     }
 
-.blog-post-img2{
-  flex:1;
-  padding:2rem 2rem 2rem 0rem;
-}
+    .blog-post-img2{
+          flex:1;
+          padding: 2rem 2rem 2rem 0;
 
-.blog-post-img3{
-  flex:1;
-  padding:2rem 2rem 2rem 0rem;
-}
+    }
+
+    .blog-post-img3{
+          flex:1;
+          padding: 2rem 2rem 2rem 0;
+      }
 
 .blog-post-img1>img{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     border-radius: 0.3rem;
     object-fit: cover;
     transform: translateX(-50px);
@@ -238,17 +244,8 @@
 }
 
 .blog-post-img2>img{
-  width: 100%;
-  height: 100%;
-  border-radius: 0.3rem;
-  object-fit: cover;
-  transform: translateX(-50px);
-  box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
-}
-
-.blog-post-img3>img{
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 80%;
   border-radius: 0.3rem;
   object-fit: cover;
   transform: translateX(-50px);
@@ -264,37 +261,3 @@
 }
 
 
-.drop-down{
-  margin-top: 20px;
-  margin-left: 500px;
-  margin-right: 500px;
-}
-
-p {
-  font-family: Lato;
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-}

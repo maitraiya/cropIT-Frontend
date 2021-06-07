@@ -1,3 +1,4 @@
+<img class="image" src="./assets/imgs/bg1.jpg">
 <ng-template #template>
     <div class="modal-header">
         <h4 class="modal-title pull-left">
@@ -14,7 +15,7 @@
     </div>
 </ng-template>
 
-
+<div class="homeb">
 <div *ngFor="let post of posts" class="blog-post">
     <div class="blog-post-img1">
         <img [src]="post.company.user.profile" alt="tree">
@@ -50,4 +51,5 @@
             <a>Accept</a>
         </div>
     </div>
+</div>
 </div>

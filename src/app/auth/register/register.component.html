@@ -1,86 +1,152 @@
-<div class="login">
-    <form [formGroup]="registerForm">
+<img class="wave" src="./assets/image/wave.png">
+
+  <div class="container">
+    <div class="img">
+      <img  class="image" src="./assets/image/bg.svg">
+      </div>
+
+    <div class="register">
+      <form [formGroup]="registerForm">
+        <div class="img">
+          <img src="./assets/image/avatar.svg">
+        </div>
+        <h2 class="title">Sign Up</h2>
+
         <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input formControlName="name" type="text" class="form-control" placeholder="Enter name">
+
+          <div class="col">
+            <div class="div">
+              <div class="form-group name">
+                <div class="i">
+                  <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
+                <input formControlName="name" type="text" class="form-control" placeholder="Enter name">
+              </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input formControlName="email" type="text" class="form-control" placeholder="Enter email">
+          </div>
+
+          <div class="col">
+            <div class="div">
+              <div class="form-group email">
+                <div class="i">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
                 </div>
+                <input formControlName="email" type="text" class="form-control" placeholder="Enter email">
+              </div>
             </div>
+          </div>
+
+      </div>
+
+      <div class="row">
+          <div class="col">
+            <div class="div">
+              <div class="form-group phone">
+                <div class="i">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <input formControlName="phone" type="text" class="form-control" placeholder="Enter phone">
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+
+            <div class="div">
+              <div class="form-group city">
+                <div class="i">
+                  <i class="fa fa-address-book" aria-hidden="true"></i>
+                </div>
+                <input formControlName="city" type="text" class="form-control" placeholder="Enter city">
+              </div>
+            </div>
+
+          </div>
+      </div>
+
+      <div class="form-group address">
+        <div class="i">
+          <i class="fa fa-address-book" aria-hidden="true"></i>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label>phone</label>
-                    <input formControlName="phone" type="text" class="form-control" placeholder="Enter phone">
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label>City</label>
-                    <input formControlName="city" type="text" class="form-control" placeholder="Enter city">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Address</label>
-            <input formControlName="address" type="text" class="form-control" placeholder="Enter address">
-        </div>
-        <div class="form-group">
-            <label>Adhaar</label>
-            <input formControlName="adhaar" type="text" class="form-control" placeholder="Enter adhaar">
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label>Password</label>
-                    <input formControlName="password" type="password" class="form-control" placeholder="Password">
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <input formControlName="confirmPassword" type="password" class="form-control"
-                        placeholder="Password">
-                </div>
-            </div>
+        <input formControlName="address" type="text" class="form-control" placeholder="Enter address">
+      </div>
+
+      <div class="form-group adhaar">
+        <div class="i">
+          <i class="fa fa-id-card"></i>
         </div>
 
+       <input formControlName="adhaar" type="text" class="form-control" placeholder="Enter adhaar">
+      </div>
 
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="farmer" formControlName="userType">
-            <label class="form-check-label">Farmer</label>
+      <div class="row">
+        <div class="col">
+          <div class="div">
+            <div class="form-group password">
+
+              <div class="i">
+                <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+              </div>
+
+              <input formControlName="password" type="password" class="form-control" placeholder="Password">
+            </div>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="company" formControlName="userType">
-            <label class="form-check-label">Company</label>
+
+        <div class="col">
+
+          <div class="div">
+            <div class="form-group comfirm password">
+              <div class="i">
+                <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+              </div>
+
+              <input formControlName="password" type="password" class="form-control" placeholder="Confirm Password">
+            </div>
+          </div>
+
         </div>
-        <div class="form-group">
-            <label>{{registerForm.get('userType').value == 'farmer' ? 'Land area': 'Domain'}}</label>
-            <input formControlName="landAreaOrDomain" type="text" class="form-control" [placeholder]="registerForm.get('userType').value == 'farmer' ? 'Enter land area': 'Enter domain' ">
+      </div>
+
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="farmer" formControlName="userType">
+          <label class="form-check-label">Farmer</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" value="company" formControlName="userType">
+          <label class="form-check-label">Company</label>
+      </div>
+
+      <div class="form-group" >
+          <!-- <label>{{registerForm.get('userType').value == 'farmer' ? 'Land area': 'Domain'}}</label> -->
+        <div class="i"><i class="fa fa-building">
+        </i>
         </div>
-        <div class="form-group">
-            <label>Material</label>
+          <input  formControlName="landAreaOrDomain" type="text" class="form-control" [placeholder]="registerForm.get('userType').value == 'farmer' ? 'Enter land area': 'Enter domain' ">
+      </div>
+
+      <div class="material1">
+        <div class="i"><i class="fa fa-wheat"></i></div>
             <select (change)="onMaterialSelect()" class="form-control" formControlName="material">
-                <option selected disabled hidden>Select Material</option>
-                <option [ngValue]="material" *ngFor="let material of materials">{{material.name}}</option>
+              <option selected >Select Material</option>
+              <option [ngValue]="material" *ngFor="let material of materials">{{material.name}}</option>
             </select>
-        </div>
-        <div style="margin-left: 20px;" *ngFor="let material of selectedMaterials;index as i">
-            <div class="row">
-                {{material.name}}
-                <p (click)="selectedMaterials.splice(i, 1)" style="margin-left: 20px;" class="text-danger"> X </p>
-            </div>
-        </div>
-        <button (click)="register()" type="submit" class="btn btn-primary">Register</button>
-        <div>
-            <a routerLink="../login"><small>Click here to Login</small></a>
-        </div>
-    </form>
+      </div>
+
+      <div style="margin-left: 20px;" *ngFor="let material of selectedMaterials;index as i">
+          <div class="row">
+              {{material.name}}
+              <p (click)="selectedMaterials.splice(i, 1)" style="margin-left: 20px;" class="text-danger"> X </p>
+          </div>
+      </div>
+
+
+      <button (click)="register()" type="submit" class="btn">Register</button>
+
+       <div>
+        <a routerLink="../login"><small>Click here to Login</small></a>
+       </div>
+      </form>
+   </div>
 </div>

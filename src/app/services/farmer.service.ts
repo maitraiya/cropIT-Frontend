@@ -13,7 +13,7 @@ export class FarmerService {
   ) { }
 
   getFarmers() {
-    return this.http.get('/farmer');
+    return this.http.get('/farmer/')
   }
 
   updateFarmer(body) {
@@ -31,15 +31,15 @@ export class FarmerService {
   getOnRent(body) {
     return this.http.post('/rented', body);
   }
-  
+
   getDeals() {
     return this.http.get('/deal');
   }
-  
+
   acceptDeal(body) {
     return this.http.post('/deal', body)
   }
-  
+
   pricePredictor(id) {
     return this.http.get(`/pricePredictor/${id}`);
   }

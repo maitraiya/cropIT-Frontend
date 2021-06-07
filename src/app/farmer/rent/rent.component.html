@@ -1,3 +1,5 @@
+<img class="image" src="./assets/imgs/bg1.jpg">
+<div class="homeb">
 <div *ngFor="let machine of machines" class="blog-post">
   <div class="blog-post-img1">
     <img [src]="machine.image" alt="tree">
@@ -24,7 +26,8 @@
       <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
     </div>
     <div class="blog-post-read-more">
-      <button [disabled]="date.length !== 2" (click)="getOnRent(machine)" class="btn btn-primary" type="button">Get On Rent</button>
+      <button [disabled]="date.length !== 2" (click)="getOnRent(machine)" class="btn btn-warning" type="button">Get On Rent</button>
     </div>
   </div>
+</div>
 </div>

@@ -25,19 +25,21 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   forgotPassword() {
+    //console.log("Working on forget before !"+this.forgotPasswordForm.value.password+"conform"+this.forgotPasswordForm.value.confirmPassword);
+     if (this.forgotPasswordForm.value.password == this.forgotPasswordForm.value.confirmPassword) {
 
-    if (this.forgotPasswordForm.value.password == this.forgotPasswordForm.value.confirmPassword) {
       this.http.post('http://localhost:3000/api/forgotPassword', this.forgotPasswordForm.value)
         .subscribe((result: any) => {
-          this.toastr.success(result.message);
+         // console.log("Working on forget !");
+             this.toastr.success(result.message);
           this.router.navigate(['']);
         }, (err: any) => {
           this.toastr.error(err.error);
         }
         )
-    }else{
-      this.toastr.error('Passwords do not match');
-    }
+     }else{
+       this.toastr.error('Passwords do not match');
+     }
   }
 }
 
