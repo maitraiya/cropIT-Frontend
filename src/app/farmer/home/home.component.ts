@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent implements OnInit {
   posts = [];
+  displayPosts = [];
   modalRef: BsModalRef;
   predictedPrice;
   price;
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
     this.companyService.getPosts().subscribe(
       (res: any) => {
         this.posts = this.getFuturePosts(_.flatten(res));
+        this.displayPosts = this.posts;
       },
       (error) => {
         console.log('error', error);
@@ -71,6 +73,14 @@ export class HomeComponent implements OnInit {
     return this.farmerService.pricePredictor(post.id).subscribe((price) => {
       console.log('price', price);
       post.price = price;
+    });
+  }
+
+  search(value) {
+    this.displayPosts = this.posts.filter((o) => {
+      if (o?.company?.user?.name.includes([value])) {
+        return o;
+      }
     });
   }
 }

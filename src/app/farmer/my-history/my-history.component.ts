@@ -14,6 +14,7 @@ import { FarmerService } from 'src/app/services/farmer.service';
 })
 export class MyHistoryComponent implements OnInit {
   deals = [];
+  displayDeals = [];
   selectedDeal;
   modalRef: BsModalRef;
   @ViewChild('pdfTable', {static: false}) pdfTable: ElementRef;
@@ -29,6 +30,7 @@ export class MyHistoryComponent implements OnInit {
   getDeals() {
     this.farmerService.getDeals().subscribe((res: any) => {
       this.deals = res;
+      this.displayDeals = res;
     });
   }
 
@@ -55,5 +57,13 @@ export class MyHistoryComponent implements OnInit {
      
     const documentDefinition = { content: html };
     pdfMake.createPdf(documentDefinition).open(); 
+  }
+
+  search(value) {
+    this.displayDeals = this.deals.filter((o) => {
+      if (o?.posting?.addedBy?.user?.name.toLowerCase().includes([value.toLowerCase()])) {
+        return o;
+      }
+    });
   }
 }

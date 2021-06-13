@@ -7,49 +7,53 @@
             </div>
         </h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
         <app-tools></app-tools>
     </div>
 </ng-template>
 
+<div>
+    <label for="my-input">Search</label>
+    <input #searchInput type="text" (keyup)="search(searchInput.value)">
+</div>
 <div class="homeb">
-<div *ngFor="let post of posts" class="blog-post">
-    <div class="blog-post-img1">
-        <img [src]="post.company.user.profile" alt="tree">
-    </div>
-    <div class="blog-post-info">
-        <div class="blog-post-title">
-            <h2>{{post?.company?.user?.name}}</h2>
-
+    <div *ngFor="let post of displayPosts" class="blog-post">
+        <div class="blog-post-img1">
+            <img [src]="post.company.user.profile" alt="tree">
         </div>
-        <div class="blog-post-date">
-            <b> <span>Pickup Date: </span></b>
-            <span>{{post?.expiryDate | date}}</span><br>
-            <b> <span>Type </span></b>
-            <span>{{post?.material?.name}} </span><br>
-            <b> <span>Price: </span></b>
-            <span>{{post.cost}} Rs/Acre </span><br>
+        <div class="blog-post-info">
+            <div class="blog-post-title">
+                <h2>{{post?.company?.user?.name}}</h2>
 
-            <b> <span>Address: </span></b>
-            <span>{{post?.company?.user?.address}}</span>
-        </div>
-        <!-- <div (click)="openModal(template)" class="blog-post-read-more pb-4">
+            </div>
+            <div class="blog-post-date">
+                <b> <span>Pickup Date: </span></b>
+                <span>{{post?.expiryDate | date}}</span><br>
+                <b> <span>Type </span></b>
+                <span>{{post?.material?.name}} </span><br>
+                <b> <span>Price: </span></b>
+                <span>{{post.cost}} Rs/Acre </span><br>
+
+                <b> <span>Address: </span></b>
+                <span>{{post?.company?.user?.address}}</span>
+            </div>
+            <!-- <div (click)="openModal(template)" class="blog-post-read-more pb-4">
       <a>Price predictor</a>
     </div> -->
 
-        <div (click)="getPrice(post)" class="blog-post-read-more pb-4">
-            <a>Price predictor</a>
-        </div>
+            <div (click)="getPrice(post)" class="blog-post-read-more pb-4">
+                <a>Price predictor</a>
+            </div>
 
-        <div *ngIf="post.price" class="blog-post-read-more pb-4">
-            <p>Price is: {{post?.price?.data}}</p>
-        </div>
-        <div (click)="acceptDeal(post)" class="blog-post-read-more">
-            <a>Accept</a>
+            <div *ngIf="post.price" class="blog-post-read-more pb-4">
+                <p>Price is: {{post?.price?.data}}</p>
+            </div>
+            <div (click)="acceptDeal(post)" class="blog-post-read-more">
+                <a>Accept</a>
+            </div>
         </div>
     </div>
-</div>
 </div>

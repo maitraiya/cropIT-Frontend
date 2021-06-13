@@ -1,5 +1,9 @@
 <img class="image" src="./assets/imgs/bg1.jpg">
-<div *ngFor="let company of companylist" class="blog-post">
+<div>
+  <label for="my-input">Search</label>
+  <input #searchInput type="text" (keyup)="search(searchInput.value)">
+</div>
+<div *ngFor="let company of displayPosts" class="blog-post">
   <div class="blog-post-img1">
     <img [src]="company?.user?.profile" alt="company">
 </div>

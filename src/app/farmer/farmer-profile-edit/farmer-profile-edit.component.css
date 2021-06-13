@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-@import url('C:/Users/Admin/Development/angular-projects/UserInterface/UserInterface/node_modules/font-awesome/css/font-awesome.min.css');
+@import url('../../../../node_modules/font-awesome/css/font-awesome.min.css');
 
 .container{
   margin-top: 50px;

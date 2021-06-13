@@ -1,7 +1,11 @@
 <img class="image" src="./assets/imgs/bg1.jpg">
-<div *ngFor="let farmer of farmers" class="blog-post">
+<div>
+  <label for="my-input">Search</label>
+  <input #searchInput type="text" (keyup)="search(searchInput.value)">
+</div>
+<div *ngFor="let farmer of displayPosts" class="blog-post">
   <div class="blog-post-img1">
-    <img [src]="farmer.user.profile" alt="Farmer">
+    <img [src]="farmer?.user?.profile" alt="Farmer">
 </div>
   <div class="blog-post-info">
       <div class="blog-post-title">
