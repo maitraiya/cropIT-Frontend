@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class HttpService {
 
-  api = 'http://localhost:3000/api';
+  api = 'https://cropit-backend.herokuapp.com/api';
 
   constructor(
     private http: HttpClient,
