@@ -1,0 +1,76 @@
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+@import url('https://code.jquery.com/jquery-3.4.1.slim.min.js');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
+@import url('C:/Users/LENOVO/Development/Angular Projects/cropIT-Frontend/node_modules/font-awesome/css/font-awesome.min.css');
+*
+{
+	padding:0;
+	margin:0;
+}
+body
+{
+	font-family:sans-serif;
+}
+.icon
+{
+	color:white;
+}
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index:10;
+}
+.navbar
+{
+	background-image:linear-gradient(to right,#6B8E23,#154C1A);
+	padding: 0 !important;
+}
+.navbar-brand img
+{
+	height:40px;
+	padding-left:20px;
+}
+.navbar-nav lighter{
+	padding: 0 10px;
+
+}
+.navbar-nav li a{
+	color:#fff !important;
+	font-weight: 600;
+	float:right;
+	text-align:left;
+	margin-right:20px;
+}
+.fa-bars
+{
+	color: fff;
+	font-size:30px !important;
+}
+.navbar-toggler{
+	outline:none !important;
+}
+
+
+
+/*____login as---*/
+
+#id01 .list-nm{
+	  padding-bottom:50px;
+	  padding-top:50dp;
+}
+.login-as img{
+	width:100px;
+	transition:0.5s;
+}
+.login-as a:hover img{
+	transform:translateY(-10px);
+}
+.login-nm label
+{
+	margin-left:20px;
+
+}
+
+

@@ -4,6 +4,11 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { ServicesComponent } from './services/services.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+
 
 
 const routes: Routes = [
@@ -13,7 +18,11 @@ const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: 'forgotPassword', component: ForgotPasswordComponent }
+      { path: 'forgotPassword', component: ForgotPasswordComponent },
+      { path: 'home', component: HomeComponent},
+      { path: 'services', component: ServicesComponent},
+      { path: 'aboutus', component: AboutUsComponent},
+      {path: 'contactus',component: ContactUsComponent}
     ]
   }
 ];

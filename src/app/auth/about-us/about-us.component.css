@@ -1,0 +1,51 @@
+/* about us section ----*/
+#about-us
+{
+	background:#f8f9fa;
+	padding-bottom:50px;
+	padding-top:50px;
+  scroll-behavior: smooth;
+}
+.about-title
+{
+	font-size:40px;
+	font-weight:600;
+	margin-top:8%;
+}
+#about-us ul li
+{
+	margin:10px 0;
+}
+#about-us ul
+{
+	margin-left:20px;
+}
+#testimonials
+{
+	margin:100px 0;
+}
+.testimonials
+{
+	border-left: 4px solid #32CD32;
+	margin-top:50px;
+	margin-bottom:50px;
+  scroll-behavior: smooth;
+}
+.testimonials img{
+	height:60px;
+	width:60px;
+	border-radius:50%;
+	margin:0 10px;
+}
+.img{
+  height:60px;
+	width:60px;
+	border-radius:50%;
+	margin:0 10px;
+}
+.user-details
+{
+	display:inline-block;
+	font-size:12px;
+}
+
