@@ -19,6 +19,14 @@ export class AuthService {
     return this.http.post('/login', body);
   }
 
+  sendMail(email) {
+    return this.http.get(`/forgotPass?email=${email}`);
+  }
+
+  resetPass(body) {
+    return this.http.post('/forgotPass/reset', body);
+  }
+
   signUp(body) {
     return this.http.post('/signup', body);
   }

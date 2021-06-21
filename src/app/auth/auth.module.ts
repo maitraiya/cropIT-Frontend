@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SendMailComponent } from './send-mail/send-mail.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     HomeComponent,
     ServicesComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    SendMailComponent
   ],
   imports: [
     CommonModule,

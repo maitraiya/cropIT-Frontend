@@ -1,45 +1,50 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
+  styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent implements OnInit {
-
   forgotPasswordForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private toastr: ToastrService, private router: Router) {
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService,
+    private router: Router,
+    private active: ActivatedRoute,
+    private auth: AuthService
+  ) {
     this.forgotPasswordForm = this.formBuilder.group({
-      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      confirmPassword: [null, [Validators.required]]
-    })
+      confirmPassword: [null, [Validators.required]],
+    });
   }
 
   ngOnInit(): void {
+    localStorage.setItem('cropit-auth-token', this.active.snapshot.params.token);
   }
 
   forgotPassword() {
-    //console.log("Working on forget before !"+this.forgotPasswordForm.value.password+"conform"+this.forgotPasswordForm.value.confirmPassword);
-     if (this.forgotPasswordForm.value.password == this.forgotPasswordForm.value.confirmPassword) {
-
-      this.http.post('http://localhost:3000/api/forgotPassword', this.forgotPasswordForm.value)
-        .subscribe((result: any) => {
-         // console.log("Working on forget !");
-             this.toastr.success(result.message);
+    if (
+      this.forgotPasswordForm.value.password ==
+      this.forgotPasswordForm.value.confirmPassword
+    ) {
+      this.auth.resetPass(this.forgotPasswordForm.value).subscribe(
+        (result: any) => {
+          localStorage.clear();
+          this.toastr.success(result.message);
           this.router.navigate(['']);
-        }, (err: any) => {
+        },
+        (err: any) => {
           this.toastr.error(err.error);
         }
-        )
-     }else{
-       this.toastr.error('Passwords do not match');
-     }
+      );
+    } else {
+      this.toastr.error('Passwords do not match');
+    }
   }
 }
-

@@ -1,0 +1,32 @@
+<img class="wave" src="./assets/image/wave.png">
+<div class="container">
+  <div class="img">
+    <img src="./assets/image/bg.svg">
+  </div>
+
+  <div class="forgot">
+   <form [formGroup]="forgotPasswordForm" (submit)="forgotPassword()">
+      <img src="assets/image/avatar.svg">
+      <h2 class="title">Welcome</h2>
+      <div class="form-group one">
+          <div class="i">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+
+          <div class="div">
+            <!-- <h5>Email address</h5> -->
+            <input formControlName="email" type="email" class="form-control" placeholder="Email Address">
+            <small *ngIf="forgotPasswordForm.get('email').getError('required') && forgotPasswordForm.get('email').touched" class="text-danger">Please enter email</small>
+          </div>
+      </div>
+
+
+      <button (click)="forgotPassword()"  type="submit" class="btn">Send Mail</button>
+
+     <div>
+      <a routerLink="../login"><small>Click here to Login</small></a>
+    </div>
+    </form>
+  </div>
+
+</div>

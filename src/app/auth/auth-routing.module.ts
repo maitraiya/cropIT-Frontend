@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SendMailComponent } from './send-mail/send-mail.component';
 
 
 
@@ -18,7 +19,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: 'forgotPassword', component: ForgotPasswordComponent },
+      { path: 'forgotPassword/:token', component: ForgotPasswordComponent },
+      { path: 'send-mail', component: SendMailComponent },
       { path: 'home', component: HomeComponent},
       { path: 'services', component: ServicesComponent},
       { path: 'aboutus', component: AboutUsComponent},
